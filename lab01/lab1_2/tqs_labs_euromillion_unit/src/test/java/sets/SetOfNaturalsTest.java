@@ -6,6 +6,8 @@ package sets;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.beans.Transient;
+
 import org.junit.jupiter.api.*;
 
 /**
@@ -16,6 +18,8 @@ public class SetOfNaturalsTest {
     private SetOfNaturals setB;
     private SetOfNaturals setC;
     private SetOfNaturals setD;
+    private SetOfNaturals setE;
+
 
     @BeforeEach
     public void setUp() {
@@ -27,6 +31,7 @@ public class SetOfNaturalsTest {
             setC.add(i * 10);
         }
         setD = SetOfNaturals.fromArray(new int[]{30, 40, 50, 60, 10, 20});
+        setE = new SetOfNaturals();
     }
 
     @AfterEach
@@ -52,14 +57,41 @@ public class SetOfNaturalsTest {
 
         // must fail with exception
         assertThrows(IllegalArgumentException.class, () -> setA.add(elems));
+        assertThrows(IllegalArgumentException.class, () -> setA.add(new int[] {0,-5,10}));
     }
 
 
     @Test
     public void testIntersectForNoIntersection() {
         assertFalse(setA.intersects(setB), "no intersection but was reported as existing");
+        setE.add(new int[]{7, 8 , 12});
+        //setE.add(new int[]{3 , 15});
+        //assertFalse(setE.intersects(setD));
 
     }
+
+    @Test
+    public void addNegativeDuplicate(){
+        assertThrows(IllegalArgumentException.class, () -> setE.add(-1));
+        setE.add(20);
+        assertThrows(IllegalArgumentException.class, () -> setE.add(20));
+    }
+
+    @Test 
+    public void size_and_containsTest(){
+        setE.add(1);
+        setE.add(2);
+        setE.add(3);
+        assertEquals(3, setE.size());
+        assertFalse(setE.contains(4));
+    }
+
+    @Test 
+    public void equalsTest(){
+        setE = SetOfNaturals.fromArray(new int[]{30, 40, 50, 60, 10, 20});
+        assertTrue(setD.equals(setE));
+    }
+
 
 
 }
