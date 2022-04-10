@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: lab4.tests.PageObjectTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.556 s <<< FAILURE! - in lab4.tests.PageObjectTest
+pageObjectPatternTest  Time elapsed: 0.543 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/openqa/selenium/internal/FindsById
+	at lab4.tests.PageObjectTest.pageObjectPatternTest(PageObjectTest.java:33)
+Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.internal.FindsById
+	at lab4.tests.PageObjectTest.pageObjectPatternTest(PageObjectTest.java:33)
+
