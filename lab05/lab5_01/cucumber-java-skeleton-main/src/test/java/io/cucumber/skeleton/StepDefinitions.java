@@ -29,8 +29,8 @@ public class StepDefinitions {
         belly.growl();
     }
 
-    
-    @Given("A calculator I just turned on")
+
+    @Given("a calculator I just turned on")
     public void setup() {
         calc = new Calculator();
     }
