@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: euromillions.EuromillionsDrawTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.079 s <<< FAILURE! - in euromillions.EuromillionsDrawTest
+testFindMatches  Time elapsed: 0.064 s  <<< ERROR!
+java.lang.IllegalArgumentException: Illegal argument: not a natural number
+	at euromillions.EuromillionsDrawTest.setUp(EuromillionsDrawTest.java:15)
+
